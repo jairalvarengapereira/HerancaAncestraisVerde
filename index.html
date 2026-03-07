@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Herança dos Ancestrais | Samba de Raiz em BH</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="menu-overlay" id="menuOverlay" onclick="fecharMenu()"></div>
+<nav class="menu-mobile" id="menuMobile">
+  <a href="#quem-somos" onclick="fecharMenu()">Quem Somos</a>
+  <a href="#galeria" onclick="fecharMenu()">Galeria</a>
+  <a href="#agenda" onclick="fecharMenu()">Agenda</a>
+  <a href="#contato" onclick="fecharMenu()">Contato</a>
+</nav>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">Herança dos Ancestrais</a>
+  <ul class="nav-links">
+    <li><a href="#quem-somos">Quem Somos</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-content">
+    <img src="" alt="Logo" class="hero-logo" style="display:none">
+    <p class="hero-eyebrow">Belo Horizonte, Minas Gerais</p>
+    <h1 class="hero-title">Onde a Terra Guarda<em>O Samba que não Morre</em></h1>
+    <p class="hero-subtitle">Do batuque dos antepassados à batida do pandeiro mineiro — carregamos nas mãos a memória viva dos que vieram antes e na voz, a chama que nenhum tempo apaga.</p>
+    <div class="hero-ctas">
+      <a href="#agenda" class="btn-primary">Ver Próximos Shows</a>
+      <a href="#quem-somos" class="btn-outline">Nossa História</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Desça</span></div>
+</section>
+
+<section id="quem-somos" class="section-pad">
+  <div class="sec-grad top" style="background:linear-gradient(to bottom,#002a17,transparent)"></div>
+  <div class="container">
+    <div class="qs-grid">
+      <div class="qs-text">
+        <p class="section-label">Nossa história</p>
+        <h2 class="section-title">Raízes Que <span>Cantam</span></h2>
+        <div class="divider"></div>
+        <p>O <strong>Grupo Herança dos Ancestrais</strong> nasceu do desejo profundo de honrar os que vieram antes. Somos sambistas de Belo Horizonte comprometidos com a preservação do <strong>samba de raiz</strong> — aquele que transborda memória, resistência e brasilidade verdadeira.</p>
+        <p>Nossa missão é simples e urgente: manter viva a chama do <strong>samba mineiro</strong>, levando às ruas, aos palcos e às rodas de BH a batida ancestral dos tamborins, o canto coletivo e a alegria que pertence ao povo.</p>
+        <p>Formado por músicos, cantores e dançarinos apaixonados, o grupo une gerações em torno de um patrimônio que não pode ser esquecido — porque <strong>quem perde as raízes perde o caminho de volta para casa.</strong></p>
+        <div class="valores">
+          <div class="valor-card"><div class="valor-icon">🥁</div><h3>Samba de Raiz</h3><p>Ritmos e tradições preservados com autenticidade e respeito.</p></div>
+          <div class="valor-card"><div class="valor-icon">🌿</div><h3>Ancestralidade</h3><p>A memória dos antepassados vive em cada batida e verso.</p></div>
+          <div class="valor-card"><div class="valor-icon">🎶</div><h3>Cultura Viva</h3><p>Levamos o samba às ruas de BH para que pertença ao povo.</p></div>
+          <div class="valor-card"><div class="valor-icon">🤝</div><h3>Comunidade</h3><p>Unimos gerações e histórias em torno da roda de samba.</p></div>
+        </div>
+      </div>
+      <div class="qs-visual">
+        <div class="qs-frame"></div>
+        <img src="" alt="Logo" class="logo-grande" style="min-height:380px;background:linear-gradient(135deg,#003520,#001a0d)">
+      </div>
+    </div>
+  </div>
+  <div class="sec-grad bot" style="background:linear-gradient(to top,#002a17,transparent)"></div>
+</section>
+
+<section id="galeria" class="section-pad">
+  <div class="sec-grad top" style="background:linear-gradient(to bottom,#002a17,transparent)"></div>
+  <div class="container">
+    <div class="galeria-header">
+      <p class="section-label" style="justify-content:center">Momentos</p>
+      <h2 class="section-title" style="text-align:center">Galeria de <span>Memórias</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="masonry" id="galeria-masonry"></div>
+    <div id="video-section"></div>
+  </div>
+  <div class="sec-grad bot" style="background:linear-gradient(to top,#002a17,transparent)"></div>
+</section>
+
+<section id="agenda" class="section-pad">
+  <div class="sec-grad top" style="background:linear-gradient(to bottom,#001a0d,transparent)"></div>
+  <div class="container">
+    <div class="agenda-header">
+      <div>
+        <p class="section-label">Calendário</p>
+        <h2 class="section-title">Próximos <span>Shows</span></h2>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="eventos-lista" id="eventos-lista"></div>
+  </div>
+  <div class="sec-grad bot" style="background:linear-gradient(to top,#001a0d,transparent)"></div>
+</section>
+
+<section id="contato" class="section-pad">
+  <div class="sec-grad top" style="background:linear-gradient(to bottom,#002a17,transparent)"></div>
+  <div class="container">
+    <div class="contato-grid">
+      <div>
+        <p class="section-label">Fale conosco</p>
+        <h2 class="section-title">Entre em <span>Contato</span></h2>
+        <div class="divider"></div>
+        <div class="ci-item"><div class="ci-icon">📧</div><div><h4>E-mail</h4><a href="mailto:contato@herancadosancestrais.com.br">contato@herancadosancestrais.com.br</a></div></div>
+        <div class="ci-item"><div class="ci-icon">📱</div><div><h4>WhatsApp</h4><a href="https://wa.me/5531999999999" target="_blank">(31) 99999-9999</a></div></div>
+        <div class="ci-item"><div class="ci-icon">📍</div><div><h4>Localização</h4><p>Belo Horizonte, Minas Gerais</p></div></div>
+      </div>
+      <div>
+        <div class="fg"><label>Nome</label><input type="text" placeholder="Seu nome completo"></div>
+        <div class="form-row">
+          <div class="fg"><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
+          <div class="fg"><label>Telefone</label><input type="tel" placeholder="(31) 9 0000-0000"></div>
+        </div>
+        <div class="fg"><label>Assunto</label><select><option>Contratação para show</option><option>Parceria cultural</option><option>Imprensa</option><option>Outro</option></select></div>
+        <div class="fg"><label>Mensagem</label><textarea rows="4" placeholder="Conte mais sobre o seu projeto..."></textarea></div>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="toast('Mensagem enviada! Em breve entraremos em contato.')">Enviar Mensagem</button>
+      </div>
+    </div>
+  </div>
+  <div class="sec-grad bot" style="background:linear-gradient(to top,#004225,transparent)"></div>
+</section>
+
+<section id="redes">
+  <div class="sec-grad top" style="background:linear-gradient(to bottom,#004225,transparent)"></div>
+  <div class="container">
+    <p class="redes-label">Nos siga nas redes</p>
+    <div class="redes-links">
+      <a href="https://instagram.com/herancadosancestrais" target="_blank" class="rede-btn"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
+      <a href="https://youtube.com/@herancadosancestrais" target="_blank" class="rede-btn"><svg viewBox="0 0 24 24"><path d="M23.499 6.203a3.008 3.008 0 0 0-2.089-2.089c-1.87-.501-9.4-.501-9.4-.501s-7.509-.01-9.399.501A3.008 3.008 0 0 0 .5 6.203a31.57 31.57 0 0 0-.5 5.799 31.57 31.57 0 0 0 .5 5.801 3.008 3.008 0 0 0 2.101 2.088c1.868.502 9.4.502 9.4.502s7.509 0 9.399-.502a3.008 3.008 0 0 0 2.089-2.088 31.57 31.57 0 0 0 .5-5.801 31.57 31.57 0 0 0-.49-5.799zM9.609 15.601V8.408l6.264 3.602z"/></svg>YouTube</a>
+      <a href="https://open.spotify.com" target="_blank" class="rede-btn"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>Spotify</a>
+      <a href="https://maps.google.com/?q=Belo+Horizonte+MG" target="_blank" class="rede-btn"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Localização</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Herança dos Ancestrais</div>
+  <div class="footer-tagline">Samba de Raiz · Belo Horizonte · Minas Gerais</div>
+  <div class="footer-bottom">© 2025 Grupo Herança dos Ancestrais. Todos os direitos reservados.</div>
+</footer>
+
+<div class="floating-buttons">
+  <button class="admin-fab" onclick="abrirAdmin()" title="Painel Admin">⚙️</button>
+  <div class="wa-wrap">
+    <div class="wa-tip">💬 Fale no WhatsApp</div>
+    <a href="https://wa.me/5531999999999?text=Olá! Vim pelo site!" target="_blank" class="wa-btn" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.463 3.488"/></svg>
+    </a>
+  </div>
+</div>
+
+<div id="login-overlay">
+  <div class="lbox">
+    <button class="lcloseX" onclick="fecharLogin()">✕</button>
+    <div style="font-size:2.5rem">🔐</div>
+    <h3>Área Restrita</h3>
+    <p class="lsub">PAINEL DE ADMINISTRAÇÃO</p>
+    <div class="lfield">
+      <input type="password" id="lsenha" placeholder="••••••••••" onkeydown="if(event.key==='Enter')tentarLogin()">
+      <button class="ltoggle" onclick="toggleSenha()">👁️</button>
+    </div>
+    <div class="lerr" id="lerr"></div>
+    <button class="bentrar" onclick="tentarLogin()">Entrar</button>
+    <div class="latt" id="latt"></div>
+    <p class="lhint">Acesso exclusivo para administradores do grupo.</p>
+  </div>
+</div>
+
+<div id="admin-overlay">
+  <div class="apanel">
+    <div class="atopbar">
+      <div><h2>⚙️ Painel de Administração</h2><p>Gerencie shows, fotos e vídeos</p></div>
+      <button class="aclose" onclick="fecharAdmin()">✕</button>
+    </div>
+    <div class="atabs">
+      <button class="atab on" onclick="abaAdmin('shows',this)">🎵 Shows</button>
+      <button class="atab" onclick="abaAdmin('fotos',this)">📸 Fotos</button>
+      <button class="atab" onclick="abaAdmin('video',this)">🎬 Vídeo</button>
+      <button class="atab" onclick="abaAdmin('logo',this)">🖼️ Logo</button>
+    </div>
+    <div class="apane on" id="apane-shows">
+      <div id="shows-lista"></div>
+      <div style="margin-top:1.8rem;border-top:1px solid rgba(255,204,0,.1);padding-top:1.5rem">
+        <p class="msec" id="ftitle">➕ Adicionar Novo Show</p>
+        <input type="hidden" id="eid">
+        <div class="agrid">
+          <div class="afg"><label>Nome *</label><input id="fn" type="text" placeholder="Nome do show"></div>
+          <div class="afg"><label>Local *</label><input id="fl" type="text" placeholder="Local do show"></div>
+          <div class="afg"><label>Data *</label><input id="fd" type="date"></div>
+          <div class="afg"><label>Horário *</label><input id="fh" type="text" placeholder="Ex: 20h"></div>
+          <div class="afg"><label>Ingresso</label><input id="fi2" type="text" placeholder="Ex: Gratuito"></div>
+          <div class="afg"><label>Destaque?</label><select id="fds"><option value="0">Não</option><option value="1">Sim ⭐</option></select></div>
+        </div>
+        <div class="afg"><label>Endereço Maps</label><input id="fm" type="text" placeholder="Endereço ou URL do Google Maps"></div>
+        <div class="abtns">
+          <button class="bcanc" onclick="limparShow()">Limpar</button>
+          <button class="bsave" onclick="salvarShow()">Salvar Show</button>
+        </div>
+      </div>
+    </div>
+    <div class="apane" id="apane-fotos">
+      <p class="msec">Galeria de Fotos</p>
+      <div class="dropz" onclick="document.getElementById('foto-input').click()">
+        <div style="font-size:2rem">📷</div>
+        <p>Clique para adicionar fotos</p>
+        <small>JPG, PNG, WebP · máx. 5 MB cada</small>
+      </div>
+      <input type="file" id="foto-input" accept="image/*" multiple style="display:none" onchange="addFotos(this)">
+      <div class="mgrid" id="fotos-grid"></div>
+    </div>
+    <div class="apane" id="apane-logo">
+      <p class="msec">Logo do Grupo</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
+        <div>
+          <p style="font-size:.8rem;color:rgba(245,240,232,.5);margin-bottom:1.2rem;line-height:1.7">A logo aparece no topo da página principal e na seção Quem Somos. Recomendado: imagem quadrada ou circular, fundo transparente (PNG).</p>
+          <div class="dropz" onclick="document.getElementById('logo-input').click()">
+            <div style="font-size:2rem">🖼️</div>
+            <p>Clique para enviar a logo</p>
+            <small>PNG, JPG, WebP · máx. 5 MB</small>
+          </div>
+          <input type="file" id="logo-input" accept="image/*" style="display:none" onchange="uploadLogo(this)">
+          <div class="abtns"><button class="sdel" style="padding:.6rem 1.4rem" onclick="removerLogo()">🗑️ Remover logo</button></div>
+        </div>
+        <div>
+          <p style="font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,204,0,.65);margin-bottom:.8rem">Prévia</p>
+          <div id="logo-prev" style="background:rgba(0,36,18,.5);border:1px solid rgba(255,204,0,.12);display:flex;align-items:center;justify-content:center;min-height:200px;padding:1.5rem">
+            <span style="color:rgba(245,240,232,.2);font-size:.8rem">Nenhuma logo carregada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="apane" id="apane-video">
+      <p class="msec">Vídeo em Destaque</p>
+      <div class="vman">
+        <label>URL ou ID do YouTube</label>
+        <input id="vyt" type="text" placeholder="https://youtu.be/..." oninput="prevVideo()">
+        <div class="vprev" id="vprev"><div class="novid"><span>🎬</span>A prévia aparecerá aqui</div></div>
+        <label>Legenda</label>
+        <input id="vleg" type="text" placeholder="Ex: Herança dos Ancestrais ao Vivo">
+      </div>
+      <div class="abtns"><button class="bsave" onclick="salvarVideo()">Salvar Vídeo</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="atoast" id="atoast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
