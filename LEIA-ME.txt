@@ -1,0 +1,122 @@
+============================================================
+  INSTRUÇÕES — Herança dos Ancestrais
+  Supabase (banco gratuito) + Netlify (hospedagem)
+============================================================
+
+ARQUIVOS DO PROJETO:
+  public/
+    index.html            ← página principal
+    style.css             ← estilos
+    script.js             ← painel admin e funcionalidades
+  netlify/
+    functions/
+      api.js              ← API que conecta ao Supabase
+  netlify.toml            ← configuração do Netlify
+  package.json            ← dependência: @supabase/supabase-js
+  banco.sql               ← script para criar as tabelas
+  LEIA-ME.txt             ← este arquivo
+
+============================================================
+PASSO 1 — CRIAR CONTA E PROJETO NO SUPABASE
+============================================================
+1. Acesse https://supabase.com e clique em "Start your project"
+2. Faça login com sua conta GitHub ou Google (gratuito)
+3. Clique em "New project"
+4. Preencha:
+   - Nome: heranca-ancestrais (ou qualquer nome)
+   - Senha do banco: crie uma senha forte e ANOTE
+   - Região: South America (São Paulo)
+5. Clique em "Create new project" e aguarde ~2 minutos
+
+============================================================
+PASSO 2 — CRIAR AS TABELAS (banco.sql)
+============================================================
+1. No painel do Supabase clique em "SQL Editor" (menu lateral)
+2. Clique em "New query"
+3. Abra o arquivo banco.sql, copie TODO o conteúdo
+4. Cole na caixa do SQL Editor
+5. Clique em "Run" (ou Ctrl+Enter)
+   ✅ Deve aparecer "Success" e as tabelas serão criadas
+
+============================================================
+PASSO 3 — PEGAR AS CREDENCIAIS DO SUPABASE
+============================================================
+1. No painel do Supabase vá em "Project Settings" (ícone ⚙️)
+2. Clique em "API"
+3. Anote dois valores:
+   ┌─────────────────────────────────────────────────────┐
+   │ Project URL  → algo como:                           │
+   │   https://xyzabc.supabase.co                        │
+   │                                                     │
+   │ anon/public key → uma chave longa começando com     │
+   │   eyJhbGci...                                       │
+   └─────────────────────────────────────────────────────┘
+
+============================================================
+PASSO 4 — CONFIGURAR AS VARIÁVEIS NO NETLIFY
+============================================================
+1. Acesse app.netlify.com → entre no seu site
+2. Vá em "Site configuration" → "Environment variables"
+3. Clique em "Add a variable" e adicione as 2 abaixo:
+
+   Chave            Valor
+   ──────────────────────────────────────────────────────
+   SUPABASE_URL     https://xyzabc.supabase.co
+   SUPABASE_KEY     eyJhbGci... (a chave anon/public)
+   ──────────────────────────────────────────────────────
+
+4. Clique em "Save"
+
+============================================================
+PASSO 5 — PUBLICAR NO NETLIFY
+============================================================
+1. Acesse app.netlify.com → entre no seu site
+2. Clique na aba "Deploys"
+3. Descompacte o ZIP do projeto
+4. Arraste a PASTA INTEIRA "heranca-supabase" para a
+   área "Drag and drop your site output folder here"
+   ⚠️ Arraste a PASTA, não o ZIP
+
+Aguarde o deploy terminar (aparece "Published" em verde)
+
+============================================================
+PASSO 6 — TESTAR
+============================================================
+1. Acesse o link .netlify.app do seu site
+2. Os shows padrão devem aparecer na agenda
+3. Clique no ⚙️ → senha: heranca2025
+4. Adicione um show de teste
+5. Feche o navegador completamente
+6. Abra novamente → o show ainda está lá ✅
+
+Se os shows não aparecerem:
+  → Verifique se o banco.sql foi executado com sucesso
+  → Verifique se SUPABASE_URL e SUPABASE_KEY estão corretos
+  → No Netlify: aba "Functions" → clique em "api" → veja logs
+
+============================================================
+TROCAR A SENHA DO PAINEL ADMIN
+============================================================
+Abra public/script.js e edite:
+  var SENHA = 'heranca2025';
+Troque pela senha desejada e arraste a pasta novamente
+para fazer um novo deploy.
+
+============================================================
+OBSERVAÇÃO IMPORTANTE — PLANO GRATUITO SUPABASE
+============================================================
+Projetos inativos por mais de 7 dias são pausados
+automaticamente. Basta acessar o painel do Supabase e
+clicar em "Restore project" para reativar — leva ~1 minuto.
+Os dados NÃO são apagados, apenas o projeto fica em pausa.
+
+Para evitar pausas: acesse o site pelo menos 1x por semana,
+ou faça upgrade para o plano Pro ($25/mês) quando o grupo
+crescer e precisar de mais estabilidade.
+
+============================================================
+SUPORTE
+============================================================
+Supabase: https://supabase.com/docs
+Netlify:  https://docs.netlify.com
+============================================================

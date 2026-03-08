@@ -1,0 +1,8 @@
+{
+  "name": "heranca-ancestrais",
+  "version": "1.0.0",
+  "description": "Grupo Herança dos Ancestrais — Netlify + Supabase",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
